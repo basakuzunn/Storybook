@@ -13,7 +13,7 @@ interface ButtonProps {
   whitePrimary?: boolean;
   whiteSecondary?: boolean;
   disable?: boolean;
-  
+  className?: string;
   /**
    * What background color to use
    */
@@ -47,6 +47,7 @@ export const Button = ({
   size = 'large',
   backgroundColor,
   label,
+  className,
   ...props
 }: ButtonProps) => {
   /**
@@ -54,25 +55,25 @@ export const Button = ({
    */
   if (primary) {
     var className: string | undefined =
-      'bg-rose-600 focus:outline-4 focus:ring hover:bg-rose-700 text-white font-bold rounded ';
+      'bg-rose-600 focus:outline-4 focus:ring hover:bg-rose-700 text-white font-bold rounded active:bg-rose-700 ';
   } else if (bluePrimary) {
     var className: string | undefined =
-      'bg-blue-900 focus:outline-4 focus:ring hover:bg-blue-600 text-white font-bold  rounded ';
+      'bg-blue-900 focus:outline-4 focus:ring hover:bg-blue-600 text-white font-bold active:bg-blue-800 rounded ';
   } else if (blueSecondary) {
     var className: string | undefined =
-      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-blue-900 font-semibold hover:text-white  border-2 border-blue-900 hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-blue-900 font-semibold hover:text-white  border-2 border-blue-900 hover:border-2-transparent active:bg-transparent active:text-blue-900 rounded';
   } else if (blackPrimary) {
     var className: string | undefined =
-      'bg-black focus:outline-4 focus:ring hover:bg-blue-600 text-white font-boldrounded';
+      'bg-black focus:outline-4 focus:ring hover:bg-blue-600 text-white font-bold active:bg-black rounded';
   } else if (blackSecondary) {
     var className: string | undefined =
-      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-black font-semibold hover:text-white border-2 border-black hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-black font-semibold hover:text-white border-2 border-black hover:border-2-transparent active:bg-transparent active:text-black rounded';
   } else if (whitePrimary) {
     var className: string | undefined =
-      'bg-white focus:outline-4 focus:ring text-blue-600 hover:bg-blue-600 hover:text-white font-bold rounded';
+      'bg-white focus:outline-4 focus:ring text-blue-600 hover:bg-blue-600 hover:text-white font-bold active:bg-white active:text-blue-600 rounded';
   } else {
     var className: string | undefined =
-      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-white font-semibold hover:text-white border-2 border-white hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-white font-semibold hover:text-white border-2 border-white hover:border-2-transparent active:bg-blue-800 rounded';
   }
   /**
    * Disable Buttons
