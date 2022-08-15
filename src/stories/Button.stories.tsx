@@ -22,6 +22,8 @@ Primary.args = {
   primary: true,
   label: 'Action Title',
   disable: false,
+ 
+  
 };
 
 export const BluePrimary = Template.bind({});
@@ -29,6 +31,7 @@ BluePrimary.args = {
   label: 'Action Title',
   bluePrimary: true,
   disable: false,
+  
 };
 
 export const BlueSecondary = Template.bind({});

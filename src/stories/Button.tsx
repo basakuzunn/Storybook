@@ -13,6 +13,7 @@ interface ButtonProps {
   whitePrimary?: boolean;
   whiteSecondary?: boolean;
   disable?: boolean;
+  
   /**
    * What background color to use
    */
@@ -53,25 +54,25 @@ export const Button = ({
    */
   if (primary) {
     var className: string | undefined =
-      'bg-rose-600 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded';
+      'bg-rose-600 focus:outline-4 focus:ring hover:bg-rose-700 text-white font-bold py-2 px-4 rounded ';
   } else if (bluePrimary) {
     var className: string | undefined =
-      'bg-blue-900 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded';
+      'bg-blue-900 focus:outline-4 focus:ring hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ';
   } else if (blueSecondary) {
     var className: string | undefined =
-      'bg-transparent hover:bg-blue-600 text-blue-900 font-semibold hover:text-white py-2 px-4 border-2 border-blue-900 hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-blue-900 font-semibold hover:text-white py-2 px-4 border-2 border-blue-900 hover:border-2-transparent rounded';
   } else if (blackPrimary) {
     var className: string | undefined =
-      'bg-black hover:bg-blue-600 text-white font-bold py-2 px-4 rounded';
+      'bg-black focus:outline-4 focus:ring hover:bg-blue-600 text-white font-bold py-2 px-4 rounded';
   } else if (blackSecondary) {
     var className: string | undefined =
-      'bg-transparent hover:bg-blue-600 text-black font-semibold hover:text-white py-2 px-4 border-2 border-black hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-black font-semibold hover:text-white py-2 px-4 border-2 border-black hover:border-2-transparent rounded';
   } else if (whitePrimary) {
     var className: string | undefined =
-      'bg-white text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded';
+      'bg-white focus:outline-4 focus:ring text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded';
   } else {
     var className: string | undefined =
-      'bg-transparent hover:bg-blue-600 text-white font-semibold hover:text-white py-2 px-4 border-2 border-white hover:border-2-transparent rounded';
+      'bg-transparent focus:outline-4 focus:ring hover:bg-blue-600 text-white font-semibold hover:text-white py-2 px-4 border-2 border-white hover:border-2-transparent rounded';
   }
   /**
    * Disable Buttons
@@ -82,13 +83,14 @@ export const Button = ({
   } else if (disable && (primary || bluePrimary)) {
     var className: string | undefined =
       'bg-gray-200 text-gray-300 font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed';
-  } else if ((disable && blackSecondary) || blueSecondary ) {
+  } else if (disable && blueSecondary ) {
     var className: string | undefined =
       'bg-transparent text-gray-300 font-semibold py-2 px-4 border-2 border-gray-200 rounded opacity-50 cursor-not-allowed';
   } else if (disable && blackPrimary) {
     var className: string | undefined =
       'bg-gray-200 text-gray-300 font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed';
   }
+  
   return (
     <button type='button' className={className}>
       {label}
