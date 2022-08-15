@@ -22,7 +22,7 @@ Primary.args = {
   primary: true,
   label: 'Action Title',
   disable: false,
- 
+  size: 'large',
   
 };
 
@@ -65,14 +65,3 @@ WhiteSecondary.args = {
   disable: false,
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Action Title',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Action Title',
-};
