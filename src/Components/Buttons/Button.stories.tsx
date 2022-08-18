@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from './Button';
+import Button from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,9 +17,10 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
+  variant: 'primary',
   label: 'Action Title',
   disable: false,
   size: 'large',
@@ -29,7 +30,7 @@ Primary.args = {
 export const BluePrimary = Template.bind({});
 BluePrimary.args = {
   label: 'Action Title',
-  bluePrimary: true,
+  variant: 'bluePrimary',
   disable: false,
   
 };
@@ -37,31 +38,31 @@ BluePrimary.args = {
 export const BlueSecondary = Template.bind({});
 BlueSecondary.args = {
   label: 'Action Title',
-  blueSecondary: true,
+  variant :'blueSecondary',
   disable: false,
 };
 export const  BlackPrimary = Template.bind({});
 BlackPrimary.args = {
   label: 'Action Title',
-  blackPrimary: true,
+  variant:'blackPrimary',
   disable: false,
 };
 export const BlackSecondary = Template.bind({});
 BlackSecondary.args = {
   label: 'Action Title',
-  blackSecondary: true,
+  variant:'blackSecondary',
   disable: false,
 };
 export const WhitePrimary = Template.bind({});
 WhitePrimary.args = {
   label: 'Action Title',
-  whitePrimary: true,
+  variant: 'whitePrimary',
   disable: false,
 };
 export const WhiteSecondary = Template.bind({});
 WhiteSecondary.args = {
   label: 'Action Title',
-  whiteSecondary: true,
+  variant: 'whiteSecondary',
   disable: false,
 };
 
