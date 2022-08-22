@@ -80,6 +80,100 @@ describe('Button Unit Tests', () => {
     );
   });
 
+  test('should assert class names are correct when variant is primary and large.', () => {
+    const variant = 'primary';
+    const size = 'large';
+    const expectedClassNames = [
+      'bg-rose-600',
+      'focus:outline-4',
+      'focus:ring',
+      'hover:bg-rose-700',
+      'text-white',
+      'font-bold',
+      'rounded',
+      'active:bg-rose-700',
+      'px-6',
+      'py-2',
+    ];
+    const newprop: ButtonProps = { ...props, variant, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(
+      expect.arrayContaining(expectedClassNames)
+    );
+  });
+  
+  test('should assert class names are correct when variant is primary,large and disable.', () => {
+    const variant: ButtonVariant = 'primary';
+    const disable: ButtonDisable = true;
+    const expectedClassNames = [
+      'bg-gray-200',
+      'text-gray-300',
+      'font-bold',
+      'rounded',
+      'opacity-50',
+      'cursor-not-allowed',
+      'px-6', 'py-2'
+    ];
+    const newprop: ButtonProps = { ...props, variant, disable };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(
+      expect.arrayContaining(expectedClassNames)
+    );
+  });
+
+  test('should assert class names are correct when variant is primary and medium.', () => {
+    const variant = 'primary';
+    const size = 'medium';
+    const expectedClassNames = [
+      'bg-rose-600',
+      'focus:outline-4',
+      'focus:ring',
+      'hover:bg-rose-700',
+      'text-white',
+      'font-bold',
+      'rounded',
+      'active:bg-rose-700',
+      'px-3',
+      'py-1',
+    ];
+    const newprop: ButtonProps = { ...props, variant, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(
+      expect.arrayContaining(expectedClassNames)
+    );
+  });
+
+  test('should assert class names are correct when variant is primary and focus.', () => {
+    const variant = 'primary';
+    const size = 'large';
+    const expectedClassNames = ['focus:outline-4', 'focus:ring'];
+    const newprop: ButtonProps = { ...props, variant, size };
+    const component = render(<Button {...newprop} />);
+    const element =
+      component.container.querySelector<HTMLButtonElement>('button');
+    if (element === null) {
+      throw new Error('Element not found');
+    }
+    expect(Array.from(element.classList)).toEqual(
+      expect.arrayContaining(expectedClassNames)
+    );
+  });
+
   /**
    * bluePrimary button
    */

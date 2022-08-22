@@ -118,9 +118,10 @@ const Button = ({
   } else {
     var className: string | undefined = className + ' ' + 'px-3 py-1';
   }
+  
 
   return (
-    <button type='button' className={className}>
+    <button type='button' className={className} id='myElement'>
       {label}
     </button>
   );

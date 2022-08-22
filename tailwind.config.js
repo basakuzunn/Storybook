@@ -21,6 +21,6 @@ module.exports = {
         900: '#004070',
       },
     },
-    plugins: [],
+    plugins: [plugin(options)],
   },
 };
